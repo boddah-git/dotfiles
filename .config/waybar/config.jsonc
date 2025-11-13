@@ -1,0 +1,364 @@
+{
+    "layer": "top",
+    "position": "top",
+    "mode": "dock",
+    "height": 24,
+    "reload_style_on_change": true,
+    "gtk-layer-shell": true,
+    "margin": "8 8 -8 8",
+
+    // === Positions ===
+
+    "modules-left": [
+        "niri/workspaces",  // Numbers
+        "niri/window"       // Window name
+    ],
+
+    "modules-center": [
+        "custom/left1",
+        "custom/cpuinfo",   // CPU Temp and Clock Speed
+
+        "custom/left2",
+        "memory",           // Memory %
+
+        "custom/left3",
+        "custom/cpu",       // CPU %
+        "custom/leftin3",
+        
+        // "idle_inhibitor",   // Arch
+        "custom/update",    // Update
+
+        "custom/rightin3",
+        "clock#time",       // Time
+        "custom/right3",
+
+        "clock#date",       // Date
+        "custom/right2",
+
+        "custom/wifi",      // Nothing?
+        "bluetooth",        // Bluetooth
+        "custom/right1"
+    ],
+
+    "modules-right": [
+        // "custom/media",     
+        "custom/left4",
+        "pulseaudio",       // Audio
+
+        "custom/left5",
+        "custom/backlight", // Brightness
+        "custom/leftin1",
+
+        "battery",
+        "custom/power"      // Power
+    ],
+
+    // === Modules ===
+    "niri/workspaces": {
+        "format": "{icon}",
+        "format-icons": {
+            "1": "I",
+            "2": "II",
+            "3": "III",
+            "4": "IV",
+            "5": "V",
+            "6": "VI",
+            "7": "VII",
+            "8": "VIII",
+            "9": "IX",
+            "10": "X"
+        }
+    },
+
+    "niri/window": {
+        "format": "{}",
+        "min-length": 5
+    },
+
+    "custom/cpuinfo": {
+        "exec": "~/.config/waybar/scripts/cpu-temp.sh",
+        "return-type": "json",
+        "format": "{}",
+        "tooltip": true,
+        "interval": 5,
+        "min-length": 8,
+        "max-length": 8
+    },
+
+    "memory": {
+        "states": {
+        "warning": 75,
+        "critical": 90
+        },
+
+        "format": "󰘚 {percentage}%",
+        "format-critical": "󰀦 {percentage}%",
+        "tooltip": true,
+        "tooltip-format": "Memory Used: {used:0.1f} GB / {total:0.1f} GB",
+        "interval": 5,
+        "min-length": 7,
+        "max-length": 7
+    },
+
+    "custom/cpu": {
+        "exec": "~/.config/waybar/scripts/cpu-usage.sh",
+        "return-type": "json",
+        "tooltip": true,
+        "interval": 5,
+        "min-length": 6,
+        "max-length": 6
+    },
+
+    "idle_inhibitor": {
+        "format": "󰣇 ",
+        "tooltip": true,
+        "tooltip-format-activated": "Presentation Mode",
+        "tooltip-format-deactivated": "Idle Mode",
+        "start-activated": false,
+        "timeout": 5
+    },
+
+    "clock#time": {
+        "format": "󱑂 {:%H:%M}",
+        "tooltip": true,
+        "tooltip-format": "Standard Time: {:%I:%M %p}",
+        "min-length": 8,
+        "max-length": 8
+    },
+
+    "clock#date": {
+        "format": "󰨳 {:%m-%d}",
+        "tooltip-format": "<tt>{calendar}</tt>",
+
+        "calendar": {
+        "mode": "month",
+        "mode-mon-col": 6,
+        "on-click-right": "mode",
+
+        "format": {
+            "months": 
+            "<span color='#b4befe'><b>{}</b></span>",
+            "weekdays": 
+            "<span color='#a6adc8' font='7'>{}</span>",
+            "today": 
+            "<span color='#f38ba8'><b>{}</b></span>"
+        }
+        },
+
+        "actions": {
+        "on-click": "mode",
+        "on-click-right": "mode"
+        },
+
+        "min-length": 8,
+        "max-length": 8
+    },
+
+    "custom/wifi": {
+        "exec": "~/.config/waybar/scripts/wifi-status.sh",
+        "return-type": "json",
+        "format": "{}",
+        "tooltip": true,
+        "on-click": "~/.config/waybar/scripts/wifi-menu.sh",
+        "on-click-right": "kitty --title '󰤨  Network Manager TUI' bash -c nmtui",
+        "interval": 1,
+        "min-length": 1,
+        "max-length": 1
+    },
+
+    "bluetooth": {
+        "format": "󰂰",
+        "format-disabled": "󰂲",
+        "format-connected": "󰂱",
+        "format-connected-battery": "󰂱",
+
+        "tooltip-format": 
+        "{num_connections} connected",
+        "tooltip-format-disabled": 
+        "Bluetooth Disabled",
+        "tooltip-format-connected": 
+        "{num_connections} connected\n{device_enumerate}",
+        "tooltip-format-enumerate-connected": 
+        "{device_alias}",
+        "tooltip-format-enumerate-connected-battery": 
+        "{device_alias}: {device_battery_percentage}%",
+
+        "on-click": "~/.config/waybar/scripts/bluetooth-menu.sh",
+        "on-click-right": "kitty --title '󰂯  Bluetooth TUI' bash -c bluetui",
+        "interval": 1,
+        "min-length": 1,
+        "max-length": 1
+    },
+
+    "custom/update": {
+        "exec": "~/.config/waybar/scripts/system-update.sh",
+        "return-type": "json",
+        "format": "{}",
+        "on-click": "niri msg action spawn-sh -- 'exec ~/.config/waybar/scripts/system-update.sh up'",
+        "interval": 60,
+        "tooltip": true,
+        "signal": 20, // I'm not sure what this does
+        "min-length": 1,
+        "max-length": 1
+    },
+
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-muted": "󰝟 {volume}%",
+
+        "format-icons": {
+            "default": ["󰕿", "󰖀", "󰕾"],
+            "headphone": "󰋋",
+            "headset": "󰋋"
+        },
+
+        "tooltip": true,
+        "tooltip-format": "Device: {desc}",
+        "on-click": "~/.config/waybar/scripts/volume-control.sh -o m",
+        "on-scroll-up": "~/.config/waybar/scripts/volume-control.sh -o i",
+        "on-scroll-down": "~/.config/waybar/scripts/volume-control.sh -o d",
+        "min-length": 6,
+        "max-length": 6
+    },
+
+    "custom/backlight": {
+        "exec": "~/.config/waybar/scripts/brightness-control.sh",
+        "return-type": "json",
+        "format": "{}",
+        "tooltip": true,
+        "on-scroll-up": "~/.config/waybar/scripts/brightness-control.sh -o i",
+        "on-scroll-down": "~/.config/waybar/scripts/brightness-control.sh -o d",
+        "interval": 1,
+        "min-length": 6,
+        "max-length": 6
+    },
+
+    "battery": {
+        "states": {
+        "full": 100,
+        "good": 99,
+        "warning": 30,
+        "critical": 15
+        },
+
+        "format": "{icon} {capacity}%",
+        "format-icons": ["󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂"],
+        "format-full": "󱃌 {capacity}%",
+        "format-warning": "󰁻 {capacity}%",
+        "format-critical": "󱃍 {capacity}%",
+        "format-charging": "󱘖 {capacity}%",
+
+        "tooltip-format": "Discharging: {time}",
+        "tooltip-format-charging": "Charging: {time}",
+        "interval": 1,
+        "min-length": 6,
+        "max-length": 6
+    },
+
+    "custom/power": {
+        "format": "",
+        "tooltip": false,
+        "on-click": "~/.config/waybar/scripts/logout-menu.sh"
+    },
+
+    // === Padding ===
+
+    "custom/paddw": {
+        "format": " ",
+        "tooltip": false
+    },
+
+    "custom/paddc": {
+        "format": " ",
+        "tooltip": false
+    },
+
+    // == Left Arrows ==
+
+    "custom/left1": {
+        "format": "",
+        "tooltip": false
+    },
+    "custom/left2": {
+        "format": "",
+        "tooltip": false
+    },
+    "custom/left3": {
+        "format": "",
+        "tooltip": false
+    },
+    "custom/left4": {
+        "format": "",
+        "tooltip": false
+    },
+    "custom/left5": {
+        "format": "",
+        "tooltip": false
+    },
+    "custom/left6": {
+        "format": "",
+        "tooltip": false
+    },
+    "custom/left7": {
+        "format": "",
+        "tooltip": false
+    },
+    "custom/left8": {
+        "format": "",
+        "tooltip": false
+    },
+
+    // == Right Arrows==
+
+    "custom/right1": {
+        "format": "",
+        "tooltip": false
+    },
+    "custom/right2": {
+        "format": "",
+        "tooltip": false
+    },
+    "custom/right3": {
+        "format": "",
+        "tooltip": false
+    },
+    "custom/right4": {
+        "format": "",
+        "tooltip": false
+    },
+    "custom/right5": {
+        "format": "",
+        "tooltip": false
+    },
+
+    // == Left Inverse ==
+
+    "custom/leftin1": {
+        "format": "",
+        "tooltip": false
+    },
+    "custom/leftin2": {
+        "format": "",
+        "tooltip": false
+    },
+    "custom/leftin3": {
+        "format": "",
+        "tooltip": false
+    },
+
+    // == Right Inverse ==
+
+    "custom/rightin1": {
+        "format": "",
+        "tooltip": false
+    },
+    "custom/rightin2": {
+        "format": "",
+        "tooltip": false
+    },
+    "custom/rightin3": {
+        "format": "",
+        "tooltip": false
+    }
+
+}

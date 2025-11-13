@@ -1,0 +1,36 @@
+#pulseaudio, #custom-backlight {
+    color: white;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+#custom-left4, #custom-left5, #custom-leftin1 {
+    font-size: 23.5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+#pulseaudio {
+    background-color: #807155;
+}
+
+#custom-left4{
+    color: #807155
+}
+
+#custom-backlight {
+    background-color: #1A1A1A;
+    padding-right: 5px;
+}
+
+#custom-left5{
+    background-color: #807155;
+    color: #1A1A1A;
+
+    text-shadow: -2px 0px 2px rgba(0, 0, 0, 0.5);
+    padding-left: 2px;
+}
+
+#custom-leftin1 {
+    color: #1A1A1A;
+}

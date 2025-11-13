@@ -1,0 +1,12 @@
+{
+    "niri/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "active-only": false,
+        "on-click": "activate",
+        "on-scroll-up": "niri msg action focus-workspace-up",
+        "on-scroll-down": "niri msg action focus-workspace-down",
+        
+        "persistent-workspaces": {}
+    }
+}

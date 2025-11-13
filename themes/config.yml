@@ -1,0 +1,4 @@
+browser: firefox
+terminal: kitty
+file_manager: nautilus
+app_launcher: wofi 

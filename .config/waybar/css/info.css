@@ -1,0 +1,87 @@
+#custom-cpuinfo,
+#memory,
+#custom-cpu,
+#clock,
+#custom-wifi,
+#bluetooth,
+#custom-update {
+    color: white;
+}
+
+#custom-left1, #custom-right1,
+#custom-left2, #custom-right2,
+#custom-left3, #custom-right3, #custom-leftin3, #custom-rightin3 {
+    font-size: 23.5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+#custom-left2, #custom-left3 {
+    text-shadow: -2px 0px 2px rgba(0, 0, 0, 0.5);
+    padding-left: 2px;
+}
+
+#custom-right2, #custom-right3 {
+    text-shadow: 2px 0px 2px rgba(0, 0, 0, 0.5);
+    padding-right: 2px;
+}
+
+#custom-left1, #custom-right1 {
+    color: #2A9999;
+}
+
+#custom-left2, #custom-right2, #custom-leftin2, #custom-rightin2 {
+    color: #225A5A;
+    background: #2A9999;
+}
+
+#custom-left3, #custom-right3 {
+    color: #1A1A1A;
+    background: #225A5A;
+}
+
+#custom-leftin3, #custom-rightin3 {
+    color: #1A1A1A;
+}
+
+#custom-cpuinfo, #bluetooth, #custom-wifi{
+    margin-top: 5px;
+    margin-bottom: 5px;
+
+    background: #2A9999;
+}
+
+#memory, #clock.date{
+    margin-top: 5px;
+    margin-bottom: 5px;
+
+    background: #225A5A;
+}
+
+#custom-cpu, #clock.time {
+    margin-top: 5px;
+    margin-bottom: 5px;
+
+    background: #1A1A1A;
+}
+
+#idle_inhibitor, #custom-update {
+    font-size: 32px;
+    padding-right: 16px;
+    padding-left: 8px;
+    
+    color: white;
+
+}
+
+#custom-wifi {
+    font-size: 16px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#bluetooth {
+    font-size: 16px;
+    padding-left: 5px;
+    padding-right: 10px;
+}

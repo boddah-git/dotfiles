@@ -1,0 +1,19 @@
+#waybar {
+  font-family: 'Caskaydia Cove Nerd Font';
+  font-weight: bold;
+  font-size: 12px;
+  min-height: 0;
+}
+
+@import "css/info.css";
+@import "css/power.css";
+@import "css/window.css";
+@import "css/workspace.css";
+@import "css/volume-bright.css";
+@import "theme.css";
+
+/* === Main Background === */
+
+window#waybar {
+  background: transparent;
+}
