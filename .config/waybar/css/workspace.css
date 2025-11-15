@@ -12,6 +12,9 @@
   background: #1A1A1A;
   border-radius: 500px;
 
+  min-width: 15px;
+  min-height: 15px;
+
   padding: 4px 10px 4px 10px;
   margin: 0px 4px 0px 4px;
 }
