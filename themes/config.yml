@@ -1,4 +1,4 @@
 browser: firefox
 terminal: kitty
-file_manager: nautilus
-app_launcher: wofi 
+file_manager: kitty yazi
+app_launcher: rofi -show drun 

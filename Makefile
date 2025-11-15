@@ -2,7 +2,7 @@ include Makefile.inc
 
 venv:
 	python3 -m venv ${VENV_DIR}
-	${VENV_PIP} install jinza2 pyyaml
+	${VENV_PIP} install jinja2 pyyaml
 
 render:
 	${VENV_PYTHON} scripts/render.py

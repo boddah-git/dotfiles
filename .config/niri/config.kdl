@@ -39,12 +39,12 @@ binds {
 
     // ─── Applications ───
     MOD+RETURN                          hotkey-overlay-title="Open Terminal: kitty" { spawn-sh "kitty"; }
-    MOD+CTRL+RETURN                     hotkey-overlay-title="Open App Launcher: wofi" { spawn-sh "wofi"; }
+    MOD+CTRL+RETURN                     hotkey-overlay-title="Open App Launcher: rofi -show drun" { spawn-sh "rofi -show drun"; }
     MOD+B                               hotkey-overlay-title="Open Browser: firefox" { spawn-sh "firefox"; }
     MOD+ALT+L                           hotkey-overlay-title="Lock Screen: swaylock" { spawn-sh "swaylock"; }
     
     // Please choose your own file manager
-    MOD+E                             hotkey-overlay-title="File Manager: nautilus" { spawn-sh "nautilus"; }
+    MOD+E                             hotkey-overlay-title="File Manager: kitty yazi" { spawn-sh "kitty yazi"; }
 
     // ─── Audio Controls ─── 
     // Example volume keys mappings for PipeWire & WirePlumber.
