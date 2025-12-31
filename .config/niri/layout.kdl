@@ -1,0 +1,29 @@
+layout {
+    gaps 8 // Gap between windows
+    center-focused-column "never" // Don’t auto-center focused column
+
+    preset-column-widths {
+        proportion 0.33333
+        proportion 0.5
+        proportion 0.66667
+    }
+
+    focus-ring {
+        width 1
+        active-color "#00ac89"
+        inactive-color "#505050"
+    }
+
+    shadow {
+        softness 30
+        spread 5
+        offset x=0 y=5
+        color "#0007"
+    }
+
+    struts {
+        left 0
+        right 0
+        bottom 0
+    }
+}

@@ -5,7 +5,7 @@
     "height": 24,
     "reload_style_on_change": true,
     "gtk-layer-shell": true,
-    "margin": "8 8 -8 8",
+    "margin": "5 0 0 0",
 
     // === Positions ===
 

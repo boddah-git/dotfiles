@@ -12,6 +12,6 @@ stow:
 
 waybar:
 	killall waybar
-	nohup waybar &
+	nohup waybar > /dev/null &
 
 update: render stow
