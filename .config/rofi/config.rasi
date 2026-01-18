@@ -25,6 +25,7 @@ configuration {
 window {
     location:       center;
     width:          480;
+    height:         480;
     y-offset:       -20;
     border-radius:  24px;
 
@@ -49,12 +50,12 @@ inputbar {
 }
 
 prompt {
-    text-color: @blue;
+    text-color: @gold;
 }
 
 entry {
     placeholder:        "Search";
-    placeholder-color:  @cyan;
+    placeholder-color:  @bg3;
 }
 
 message {

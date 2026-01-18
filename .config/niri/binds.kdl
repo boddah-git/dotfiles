@@ -26,32 +26,24 @@ binds {
     MOD+Q                               { close-window; }
 
     MOD+LEFT                            { focus-column-left; }
-    MOD+H                               { focus-column-left; }
     MOD+RIGHT                           { focus-column-right; }
-    MOD+L                               { focus-column-right; }
-    MOD+UP                              { focus-window-up; }
-    MOD+K                               { focus-window-up; }
-    MOD+DOWN                            { focus-window-down; }
-    MOD+J                               { focus-window-down; }
+    MOD+UP                              { focus-workspace-up; }
+    MOD+DOWN                            { focus-workspace-down; }
 
-    MOD+CTRL+LEFT                       { move-column-left; }
-    MOD+CTRL+H                          { move-column-left; }
-    MOD+CTRL+RIGHT                      { move-column-right; }
-    MOD+CTRL+L                          { move-column-right; }
-    MOD+CTRL+UP                         { move-window-up; }
-    MOD+CTRL+K                          { move-window-up; }
-    MOD+CTRL+DOWN                       { move-window-down; }
-    MOD+CTRL+J                          { move-window-down; }
+    MOD+SHIFT+LEFT                       { move-column-left; }
+    MOD+SHIFT+RIGHT                      { move-column-right; }
+    MOD+SHIFT+UP                         { move-column-to-workspace-up; }
+    MOD+SHIFT+DOWN                       { move-column-to-workspace-down; }
 
     MOD+HOME                            { focus-column-first; }
     MOD+END                             { focus-column-last; }
     MOD+CTRL+HOME                       { move-column-to-first; }
     MOD+CTRL+END                        { move-column-to-last; }
 
-    MOD+SHIFT+LEFT                      { focus-monitor-left; }
-    MOD+SHIFT+RIGHT                     { focus-monitor-right; }
-    MOD+SHIFT+UP                        { focus-monitor-up; }
-    MOD+SHIFT+DOWN                      { focus-monitor-down; }
+    MOD+CTRL+LEFT                      { focus-monitor-left; }
+    MOD+CTRL+RIGHT                     { focus-monitor-right; }
+    MOD+CTRL+UP                        { focus-monitor-up; }
+    MOD+CTRL+DOWN                      { focus-monitor-down; }
 
     MOD+SHIFT+CTRL+LEFT                 { move-column-to-monitor-left; }
     MOD+SHIFT+CTRL+RIGHT                { move-column-to-monitor-right; }
@@ -108,7 +100,7 @@ binds {
     // ─── Modes ───
     MOD+T                               { toggle-window-floating; }
     MOD+F                               { maximize-column; }
-    MOD+CTRL+F                         { fullscreen-window; }
+    MOD+CTRL+F                          { fullscreen-window; }
     MOD+W                               { toggle-column-tabbed-display; }
 
     // ─── Screenshots ───
