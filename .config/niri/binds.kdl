@@ -37,8 +37,8 @@ binds {
 
     MOD+HOME                            { focus-column-first; }
     MOD+END                             { focus-column-last; }
-    MOD+CTRL+HOME                       { move-column-to-first; }
-    MOD+CTRL+END                        { move-column-to-last; }
+    MOD+SHIFT+HOME                       { move-column-to-first; }
+    MOD+SHIFT+END                        { move-column-to-last; }
 
     MOD+CTRL+LEFT                      { focus-monitor-left; }
     MOD+CTRL+RIGHT                     { focus-monitor-right; }
@@ -47,8 +47,6 @@ binds {
 
     MOD+SHIFT+CTRL+LEFT                 { move-column-to-monitor-left; }
     MOD+SHIFT+CTRL+RIGHT                { move-column-to-monitor-right; }
-    MOD+SHIFT+CTRL+UP                   { move-column-to-monitor-up; }
-    MOD+SHIFT+CTRL+DOWN                 { move-column-to-monitor-down; }
 
     // ─── Workspace Switching ───
     MOD+WHEELSCROLLDOWN                 cooldown-ms=150 { focus-workspace-down; }
