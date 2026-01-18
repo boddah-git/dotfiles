@@ -1,7 +1,7 @@
 #waybar {
   font-family: 'Caskaydia Cove Nerd Font';
   font-weight: bold;
-  font-size: 12px;
+  font-size: 10px;
   min-height: 0;
 }
 
@@ -15,5 +15,5 @@
 /* === Main Background === */
 
 window#waybar {
-  background: transparent;
+  background: rgba(0,0,0,0.2);
 }

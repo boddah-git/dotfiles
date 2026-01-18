@@ -1,3 +1,4 @@
+/* System Information Modules */
 #custom-cpuinfo,
 #memory,
 #custom-cpu,
@@ -5,83 +6,81 @@
 #custom-wifi,
 #bluetooth,
 #custom-update {
-    color: white;
+color: @module-fg;
 }
 
+/* Powerline Separators */
 #custom-left1, #custom-right1,
 #custom-left2, #custom-right2,
-#custom-left3, #custom-right3, #custom-leftin3, #custom-rightin3 {
-    font-size: 23.5px;
-    margin-top: 5px;
-    margin-bottom: 5px;
+#custom-left3, #custom-right3,
+#custom-leftin3, #custom-rightin3 {
+font-size: 20px;
 }
 
+/* Left Separators with Shadow */
 #custom-left2, #custom-left3 {
-    text-shadow: -2px 0px 2px rgba(0, 0, 0, 0.5);
-    padding-left: 2px;
+text-shadow: -2px 0px 2px @shadow-color;
+padding-left: 2px;
 }
 
+/* Right Separators with Shadow */
 #custom-right2, #custom-right3 {
-    text-shadow: 2px 0px 2px rgba(0, 0, 0, 0.5);
-    padding-right: 2px;
+text-shadow: 2px 0px 2px @shadow-color;
+padding-right: 2px;
 }
 
+/* Layer 1 - Tertiary Background */
 #custom-left1, #custom-right1 {
-    color: #2A9999;
+color: @separator-l1;
 }
 
+/* Layer 2 - Secondary Background */
 #custom-left2, #custom-right2, #custom-leftin2, #custom-rightin2 {
-    color: #225A5A;
-    background: #2A9999;
+color: @separator-l2;
+background: @separator-l1;
 }
 
+/* Layer 3 - Primary Background */
 #custom-left3, #custom-right3 {
-    color: #1A1A1A;
-    background: #225A5A;
+color: @separator-l3;
+background: @separator-l2;
 }
 
 #custom-leftin3, #custom-rightin3 {
-    color: #1A1A1A;
+color: @separator-l3;
 }
 
-#custom-cpuinfo, #bluetooth, #custom-wifi{
-    margin-top: 5px;
-    margin-bottom: 5px;
-
-    background: #2A9999;
+/* Module Backgrounds */
+#custom-cpuinfo, #bluetooth, #custom-wifi {
+background: @cpuinfo-bg;
 }
 
-#memory, #clock.date{
-    margin-top: 5px;
-    margin-bottom: 5px;
-
-    background: #225A5A;
+#memory, #clock.date {
+background: @memory-bg;
 }
 
 #custom-cpu, #clock.time {
-    margin-top: 5px;
-    margin-bottom: 5px;
-
-    background: #1A1A1A;
+background: @cpu-bg;
 }
 
+/* Idle Inhibitor and Update */
 #idle_inhibitor, #custom-update {
-    font-size: 32px;
-    padding-right: 16px;
-    padding-left: 8px;
-    
-    color: white;
-
+font-size: 20px;
+padding-right: 16px;
+padding-left: 8px;
+color: @text-primary;
 }
 
+/* WiFi Module */
 #custom-wifi {
-    font-size: 16px;
-    padding-left: 10px;
-    padding-right: 10px;
+font-size: 12px;
+padding-left: 10px;
+padding-right: 10px;
 }
 
+/* Bluetooth Module */
 #bluetooth {
-    font-size: 16px;
-    padding-left: 5px;
-    padding-right: 10px;
+font-size: 12px;
+padding-left: 5px;
+padding-right: 10px;
 }

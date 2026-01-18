@@ -2,16 +2,15 @@
     "layer": "top",
     "position": "top",
     "mode": "dock",
-    "height": 24,
+    "height": 12,
     "reload_style_on_change": true,
     "gtk-layer-shell": true,
-    "margin": "5 0 0 0",
+    "margin": "0 0 0 0",
 
     // === Positions ===
 
     "modules-left": [
-        "niri/workspaces",  // Numbers
-        "niri/window"       // Window name
+        "niri/workspaces"  // Numbers
     ],
 
     "modules-center": [
@@ -42,6 +41,7 @@
 
     "modules-right": [
         // "custom/media",     
+        "niri/window",       // Window name
         "custom/left4",
         "pulseaudio",       // Audio
 
@@ -57,6 +57,7 @@
     "niri/workspaces": {
         "format": "{icon}",
         "format-icons": {
+            "default": "●",
             "1": "I",
             "2": "II",
             "3": "III",
@@ -256,7 +257,7 @@
     },
 
     "custom/power": {
-        "format": "",
+        "format": "⏻",
         "tooltip": false,
         "on-click": "~/.config/waybar/scripts/logout-menu.sh"
     },

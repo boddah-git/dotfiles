@@ -1,36 +1,35 @@
+/* Volume and Brightness Modules */
 #pulseaudio, #custom-backlight {
-    color: white;
-    margin-top: 5px;
-    margin-bottom: 5px;
+color: @module-fg;
 }
 
+/* Powerline Separators */
 #custom-left4, #custom-left5, #custom-leftin1 {
-    font-size: 23.5px;
-    margin-top: 5px;
-    margin-bottom: 5px;
+font-size: 20px;
 }
 
+/* Volume Module */
 #pulseaudio {
-    background-color: #807155;
+background-color: @pulseaudio-bg;
 }
 
-#custom-left4{
-    color: #807155
+#custom-left4 {
+color: @separator-l4;
 }
 
+/* Brightness Module */
 #custom-backlight {
-    background-color: #1A1A1A;
-    padding-right: 5px;
+background-color: @backlight-bg;
+padding-right: 5px;
 }
 
-#custom-left5{
-    background-color: #807155;
-    color: #1A1A1A;
-
-    text-shadow: -2px 0px 2px rgba(0, 0, 0, 0.5);
-    padding-left: 2px;
+#custom-left5 {
+background-color: @separator-l4;
+color: @separator-l3;
+text-shadow: -2px 0px 2px @shadow-color;
+padding-left: 2px;
 }
 
 #custom-leftin1 {
-    color: #1A1A1A;
+color: @separator-l3;
 }

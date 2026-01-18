@@ -1,47 +1,51 @@
-/* 
-  bg - background
-  fg - foreground
-  br - border
-*/
+/*
+ bg - background
+ fg - foreground
+ br - border
+ */
 
 /* Main Colors */
-
-@define-color main-fg         #cdd6f4;
+@define-color main-fg         #FFFFFF;
 @define-color main-bg         transparent;
 @define-color main-br         transparent;
 
-@define-color active-bg       #9399b2;
-@define-color active-fg       #11111b;
+@define-color active-bg       #E6C88F;
+@define-color active-fg       #1A1A1A;
 
-@define-color hover-bg        #313244;
-@define-color hover-fg        rgba(205, 214, 244, 0.75);
+@define-color hover-bg        #121212;
+@define-color hover-fg        #2A9999;
 
-@define-color white           #ffffff;
-@define-color black           #000000;
+/* Base Background Colors */
+@define-color bg-primary      #1A1A1A;
+@define-color bg-secondary    #225A5A;
+@define-color bg-tertiary     #363636;
+@define-color bg-accent       #807155;
+
+/* Text Colors */
+@define-color text-primary    #FFFFFF;
+@define-color text-secondary  #E6C88F;
+@define-color text-accent     #2A9999;
 
 /* Module Colors */
+@define-color module-fg       #FFFFFF;
+@define-color workspaces-bg   transparent;
 
-@define-color module-fg       #f5e0dc;
-@define-color workspaces      #181825;
+@define-color cpuinfo-bg      #363636;
+@define-color memory-bg       #225A5A;
+@define-color cpu-bg          #1A1A1A;
+@define-color clock-date-bg   #225A5A;
+@define-color clock-time-bg   #1A1A1A;
+@define-color wifi-bg         #363636;
+@define-color bluetooth-bg    #363636;
 
-@define-color cpuinfo         #181825;
-@define-color memory          #1e1e2e;
-@define-color cpu             #313244;
-@define-color distro-fg       #000000;
-@define-color distro-bg       #9399b2;
-@define-color time            #313244;
-@define-color date            #1e1e2e;
-@define-color tray            #181825;
+@define-color pulseaudio-bg   #807155;
+@define-color backlight-bg    #1A1A1A;
 
-@define-color pulseaudio      #181825;
-@define-color backlight       #1e1e2e;
-@define-color battery         #313244;
-@define-color power           #9399b2;
+/* Powerline Separator Colors */
+@define-color separator-l1    #363636;
+@define-color separator-l2    #225A5A;
+@define-color separator-l3    #1A1A1A;
+@define-color separator-l4    #807155;
 
-/* State Colors */
-
-@define-color good            #f5e0dc;
-@define-color warning         #f9e2af;
-@define-color critical        #f38ba8;
-@define-color full            #a6e3a1;
-@define-color charging        #cdd6f4;
+/* Shadow Colors */
+@define-color shadow-color    rgba(0, 0, 0, 0.5);
