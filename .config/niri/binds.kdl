@@ -105,6 +105,8 @@ binds {
     MOD+SHIFT+S                         { screenshot; }
     CTRL+SHIFT+2                        { screenshot-screen; }
     CTRL+SHIFT+3                        { screenshot-window; }
+    
+    MOD+BACKSPACE                       { spawn-sh "~/dotfiles/.config/waybar/scripts/logout-menu.sh"; }
 
     // ─── Emergency Escape Key ───
     // Use this when a fullscreen app blocks your keybinds.

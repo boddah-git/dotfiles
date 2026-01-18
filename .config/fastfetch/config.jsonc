@@ -3,8 +3,10 @@
   "logo": {
     "source": "~/dotfiles/icon",
     "color": {
-      "1": "yellow",
-      "2": "green"
+      "1": "cyan"
+    },
+    "padding": {
+      "left": 4
     }
   },
   "modules": [
