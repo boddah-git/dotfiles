@@ -1,18 +1,18 @@
 /* Power Button */
 #custom-power {
 font-size: 10px;
-border-radius: 50%;
+border-radius: 10px;
 padding: 0;
 padding-right: 2px;
 margin: 0;
-min-width: 20px;
-box-shadow: inset 0 0 0 1px @text-secondary;
-color: @text-secondary;
-background-color: @bg-primary;
-transition: color 0.3s ease, box-shadow 0.3s ease;
+min-width: 40px;
+color: @active-fg;
+background-color: @active-bg;
+transition: color 0.3s ease, background 0.3s ease;
 }
 
 #custom-power:hover {
 color: @text-accent;
-box-shadow: inset 0 0 0 1px @text-accent;
+background: @background;
+box-shadow: inset 0 0 0 1px transparent;
 }
