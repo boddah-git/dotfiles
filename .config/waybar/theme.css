@@ -9,42 +9,42 @@
 @define-color main-bg         transparent;
 @define-color main-br         transparent;
 
-@define-color active-bg       #E6C88F;
-@define-color active-fg       #1A1A1A;
+@define-color active-bg       #e6c88f;
+@define-color active-fg       #1a1a1a;
 
 @define-color hover-bg        #121212;
-@define-color hover-fg        #2A9999;
+@define-color hover-fg        #2a9999;
 
 /* Base Background Colors */
-@define-color bg-primary      #1A1A1A;
-@define-color bg-secondary    #225A5A;
+@define-color bg-primary      #1a1a1a;
+@define-color bg-secondary    #225a5a;
 @define-color bg-tertiary     #363636;
 @define-color bg-accent       #807155;
 
 /* Text Colors */
 @define-color text-primary    #FFFFFF;
-@define-color text-secondary  #E6C88F;
-@define-color text-accent     #2A9999;
+@define-color text-secondary  #eac88f;
+@define-color text-accent     #2a9999;
 
 /* Module Colors */
 @define-color module-fg       #FFFFFF;
 @define-color workspaces-bg   transparent;
 
 @define-color cpuinfo-bg      #363636;
-@define-color memory-bg       #225A5A;
-@define-color cpu-bg          #1A1A1A;
-@define-color clock-date-bg   #225A5A;
-@define-color clock-time-bg   #1A1A1A;
+@define-color memory-bg       #225a5a;
+@define-color cpu-bg          #1a1a1a;
+@define-color clock-date-bg   #225a5a;
+@define-color clock-time-bg   #1a1a1a;
 @define-color wifi-bg         #363636;
 @define-color bluetooth-bg    #363636;
 
 @define-color pulseaudio-bg   #807155;
-@define-color backlight-bg    #1A1A1A;
+@define-color backlight-bg    #1a1a1a;
 
 /* Powerline Separator Colors */
 @define-color separator-l1    #363636;
-@define-color separator-l2    #225A5A;
-@define-color separator-l3    #1A1A1A;
+@define-color separator-l2    #225a5a;
+@define-color separator-l3    #1a1a1a;
 @define-color separator-l4    #807155;
 
 /* Shadow Colors */

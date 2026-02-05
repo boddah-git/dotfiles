@@ -1,0 +1,101 @@
+name: "Aleph"
+author: "BODDAH"
+variant: "dark"
+
+colors:
+  # Base colors
+  bg:
+    primary: "#1a1a1a"
+    secondary: "#242424"
+    tertiary: "#2d2d2d"
+    dim: "#363636"
+  
+  fg:
+    primary: "#cdd6f4"
+    secondary: "#bac2de"
+    dim: "#737aa2"
+    white: "#FFFFFF"
+  
+  # Accent colors
+  accent:
+    primary: "#eac88f"    # gold
+    secondary: "#e0af68"  # yellow
+    tertiary: "#2a9999"   # teal/cyan
+  
+  # Semantic colors
+  border:
+    normal: "#3a3a3a"
+    active: "#eac88f"
+  
+  # Status colors
+  status:
+    red: "#f7768e"
+    green: "#9ece6a"
+    yellow: "#e0af68"
+    blue: "#8caaee"
+    magenta: "#9a7ecc"
+    cyan: "#4abaaf"
+  
+  # Special colors
+  special:
+    urgent: "#f7768e"
+    hover_bg: "#121212"
+    hover_fg: "#2a9999"
+    active_bg: "#e6c88f"
+    active_fg: "#1a1a1a"
+    selection_bg: "#6d9ece"
+    selection_fg: "#000010"
+  
+  # Module specific
+  modules:
+    cpu: "#363636"
+    memory: "#225a5a"
+    clock_date: "#225a5a"
+    clock_time: "#1a1a1a"
+    audio: "#807155"
+    network: "#363636"
+
+# Terminal colors (ANSI)
+terminal:
+  black: "#0f0f0f"
+  red: "#e78284"
+  green: "#a6d189"
+  yellow: "#e5c890"
+  blue: "#8caaee"
+  magenta: "#f4b8e4"
+  cyan: "#81c8be"
+  white: "#b5bfe2"
+  
+  bright_black: "#626880"
+  bright_red: "#e78284"
+  bright_green: "#a6d189"
+  bright_yellow: "#e5c890"
+  bright_blue: "#8caaee"
+  bright_magenta: "#f4b8e4"
+  bright_cyan: "#81c8be"
+  bright_white: "#a5adce"
+  
+  cursor: "#f2d5cf"
+  cursor_text: "#303446"
+
+# Typography
+typography:
+  font_family: "CaskaydiaCove Nerd Font"
+  font_size: 10
+
+# Visual properties
+visual:
+  border_radius: 12
+  border_size: 1
+  padding: 15
+  margin: 10
+  opacity: 0.6
+  shadow: "rgba(0, 0, 0, 0.5)"
+
+# Application specific settings
+apps:
+  mako:
+    width: 350
+    height: 150
+    timeout: 5000
+    icon_size: 48

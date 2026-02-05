@@ -1,0 +1,17 @@
+* {
+  bg      : ${colors_bg_primary};
+  bg-alt  : ${colors_bg_secondary};
+  bg-dim  : ${colors_bg_tertiary};
+  border  : ${colors_border_normal};
+  fg      : ${colors_fg_primary};
+  fg-alt  : ${colors_fg_secondary};
+  fg-dim  : ${colors_fg_dim};
+  red     : ${colors_status_red};
+  green   : ${colors_status_green};
+  yellow  : ${colors_status_yellow};
+  gold    : ${colors_accent_primary};
+  magenta : ${colors_status_magenta};
+  cyan    : ${colors_status_cyan};
+  accent  : @gold;
+  urgent  : @red;
+}
