@@ -1,0 +1,60 @@
+# Mako notification daemon configuration
+
+# Font
+font=CaskaydiaCove Nerd Font 10
+
+# Colors
+background-color=#1a1a1a
+text-color=#cdd6f4
+border-color=#eac88f
+progress-color=over #3a3a3a
+
+# Border
+border-size=1
+border-radius=12
+
+# Padding and margin
+padding=15
+margin=10
+
+# Size
+width=350
+height=150
+
+# Position
+anchor=top-right
+outer-margin=20
+
+# Timeout
+default-timeout=5000
+
+# Icons
+icons=1
+max-icon-size=48
+icon-location=left
+
+# Grouping
+group-by=app-name
+
+# Urgency levels
+[urgency=low]
+border-color=#4abaaf
+default-timeout=3000
+
+[urgency=normal]
+border-color=#eac88f
+default-timeout=5000
+
+[urgency=critical]
+border-color=#f7768e
+default-timeout=0
+text-color=#f7768e
+
+# App-specific (examples)
+[app-name=volume]
+border-color=#9ece6a
+group-by=none
+
+[app-name=brightness]
+border-color=#e0af68
+group-by=none
