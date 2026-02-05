@@ -4,11 +4,11 @@
  */
 
 * {
-    bg: #1e1e2e;
-    bg-alt: #2a2a3a;
+    bg: #1a1a1a;
+    bg-alt: #eac88f;
     fg: #cdd6f4;
     fg-alt: #bac2de;
-    accent: #cba6f7;
+    accent: #1a1a1a;
     
     background-color: transparent;
     text-color: @fg;
