@@ -1,4 +1,0 @@
-browser: firefox
-terminal: kitty
-file_manager: kitty yazi
-app_launcher: rofi -show drun 

@@ -1,0 +1,17 @@
+* {
+  bg      : #1a1a1a;
+  bg-alt  : #242424;
+  bg-dim  : #2d2d2d;
+  border  : #3a3a3a;
+  fg      : #cdd6f4;
+  fg-alt  : #bac2de;
+  fg-dim  : #737aa2;
+  red     : #f7768e;
+  green   : #9ece6a;
+  yellow  : #e0af68;
+  gold    : #eac88f;
+  magenta : #9a7ecc;
+  cyan    : #4abaaf;
+  accent  : @gold;
+  urgent  : @red;
+}
