@@ -40,7 +40,8 @@
     ],
 
     "modules-right": [
-        // "custom/media",     
+        // "custom/media"
+        "tray",     
         "niri/window",       // Window name
         "custom/left4",
         "pulseaudio",       // Audio

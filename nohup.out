@@ -1,0 +1,8 @@
+[2026-02-13 19:34:30.776] [info] Using configuration file /home/boddah/.config/waybar/config.jsonc
+[2026-02-13 19:34:30.780] [info] Discovered appearance 'dark'
+[2026-02-13 19:34:30.794] [info] Using CSS file /home/boddah/.config/waybar/style.css
+[2026-02-13 19:34:30.795] [error] style.css:14:0expected semicolon
+[2026-02-13 19:34:36.009] [info] Using configuration file /home/boddah/.config/waybar/config.jsonc
+[2026-02-13 19:34:36.013] [info] Discovered appearance 'dark'
+[2026-02-13 19:34:36.026] [info] Using CSS file /home/boddah/.config/waybar/style.css
+[2026-02-13 19:34:36.027] [error] style.css:14:0expected semicolon
