@@ -92,6 +92,7 @@ class ThemeGenerator:
             'waybar.css.template': Path.home() / '.config' / 'waybar' / 'theme.css',
             'kitty.conf.template': Path.home() / '.config' / 'kitty' / 'colorscheme.conf',
             'mako.conf.template': Path.home() / '.config' / 'mako' / 'config',
+            'dolphin.colors.template': Path.home() / '.local' / 'share' / 'color-schemes' / 'theme.colors',
         }
         
         success_count = 0
