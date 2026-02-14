@@ -109,16 +109,7 @@
         "interval": 5,
         "min-length": 6,
         "max-length": 6
-    },
-
-    "idle_inhibitor": {
-        "format": "󰣇 ",
-        "tooltip": true,
-        "tooltip-format-activated": "Presentation Mode",
-        "tooltip-format-deactivated": "Idle Mode",
-        "start-activated": false,
-        "timeout": 5
-    },
+    }, 
 
     "clock#time": {
         "format": "󱑂 {:%H:%M}",
@@ -195,13 +186,10 @@
     "custom/update": {
         "exec": "~/.config/waybar/scripts/system-update.sh",
         "return-type": "json",
-        "format": "{}",
-        "on-click": "niri msg action spawn-sh -- 'exec ~/.config/waybar/scripts/system-update.sh up'",
         "interval": 60,
-        "tooltip": true,
-        "signal": 20, // I'm not sure what this does
-        "min-length": 1,
-        "max-length": 1
+        "signal": 20,
+        "on-click": "~/.config/waybar/scripts/system-update.sh up",
+        "tooltip": true
     },
 
     "pulseaudio": {

@@ -1,72 +1,114 @@
 #!/usr/bin/env bash
 
-# Check release
-if [ ! -f /etc/arch-release ]; then
+CACHE="$HOME/.cache/waybar-updates.json"
+LOCKFILE="$HOME/.cache/waybar-updates.lock"
+INTERVAL=900
+
+mkdir -p "$HOME/.cache"
+
+# ------------------------------
+# Detect AUR helper
+# ------------------------------
+get_aur_helper() {
+  if command -v yay >/dev/null 2>&1; then
+    echo "yay"
+  elif command -v paru >/dev/null 2>&1; then
+    echo "paru"
+  else
+    echo ""
+  fi
+}
+
+aur_helper=$(get_aur_helper)
+
+# ------------------------------
+# Upgrade mode
+# ------------------------------
+if [ "$1" = "up" ]; then
+  trap 'pkill -RTMIN+20 waybar' EXIT
+
+  kitty --title "󰞒  - System Update" sh -c "
+    sudo pacman -Syu
+    if [ -n \"$aur_helper\" ]; then
+      $aur_helper -Syu
+    fi
+    if command -v flatpak >/dev/null 2>&1; then
+      flatpak update
+    fi
+    printf '\nPress any key to continue...'
+    read -n 1
+  "
+
+  rm -f "$CACHE"
   exit 0
 fi
 
-pkg_installed() {
-  local pkg=$1
-  if pacman -Qi "${pkg}" &>/dev/null; then
-    return 0
-  elif pacman -Qi "flatpak" &>/dev/null && flatpak info "${pkg}" &>/dev/null; then
-    return 0
-  elif command -v "${pkg}" &>/dev/null; then
-    return 0
-  else
-    return 1
-  fi
-}
-
-get_aur_helper() {
-  if pkg_installed yay; then
-    aur_helper="yay"
-  elif pkg_installed paru; then
-    aur_helper="paru"
-  fi
-}
-
-get_aur_helper
-export -f pkg_installed
-flatpak_update_cmd="pkg_installed flatpak && flatpak update"
-
-# Trigger upgrade
-if [ "$1" == "up" ]; then
-  trap 'pkill -RTMIN+20 waybar' EXIT
-  command="
-    $0 upgrade
-    ${aur_helper} -Syu
-    $flatpak_update_cmd
-    printf '\n'
-    read -n 1 -p 'Press any key to continue...'
-    "
-  kitty --title "󰞒  - System Update" sh -c "${command}"
+# ------------------------------
+# Always show icon instantly
+# ------------------------------
+if [ -f "$CACHE" ]; then
+  cat "$CACHE"
+else
+  echo '{"text":"󰮠","tooltip":"Initializing..."}'
 fi
 
-# Check for AUR updates
-aur_updates=$(${aur_helper} -Qua | wc -l)
-official_updates=$(
-  (while pgrep -x checkupdates >/dev/null; do sleep 1; done)
-  checkupdates | wc -l
-)
+# ------------------------------
+# Prevent parallel runs
+# ------------------------------
+if [ -f "$LOCKFILE" ]; then
+  exit 0
+fi
 
-# Check for Flatpak updates
-if pkg_installed flatpak; then
-  flatpak_updates=$(flatpak remote-ls --updates | wc -l)
-else
+touch "$LOCKFILE"
+
+(
+  # Run fastfetch first (non-blocking, silent)
+  if command -v fastfetch >/dev/null 2>&1; then
+    fastfetch --load-config none >/dev/null 2>&1
+  fi
+
+  # Throttle update checks
+  if [ -f "$CACHE" ]; then
+    last_run=$(date -r "$CACHE" +%s 2>/dev/null)
+    now=$(date +%s)
+    if [ -n "$last_run" ] && (( now - last_run < INTERVAL )); then
+      rm -f "$LOCKFILE"
+      exit 0
+    fi
+  fi
+
+  official_updates=0
+  aur_updates=0
   flatpak_updates=0
-fi
 
-# Calculate total available updates
-total_updates=$((official_updates + aur_updates + flatpak_updates))
+  if command -v checkupdates >/dev/null 2>&1; then
+    official_updates=$(checkupdates 2>/dev/null | wc -l)
+  fi
 
-[ "${1}" == upgrade ] && printf "Official:   %-10s\nAUR ($aur_helper):  %-10s\nFlatpak:    %-10s\n\n" "$official_updates" "$aur_updates" "$flatpak_updates" && exit
+  if [ -n "$aur_helper" ]; then
+    aur_updates=$($aur_helper -Qua --quiet 2>/dev/null | wc -l)
+  fi
 
-tooltip="Official:   $official_updates\nAUR ($aur_helper):  $aur_updates\nFlatpak:    $flatpak_updates"
+  if command -v flatpak >/dev/null 2>&1; then
+    flatpak update --appstream --assumeno >/dev/null 2>&1
+    flatpak_updates=$(flatpak remote-ls --updates 2>/dev/null | wc -l)
+  fi
 
-# Module and tooltip
-if [ $total_updates -eq 0 ]; then
-  echo "{\"text\":\"󰮠\", \"tooltip\":\"Packages are up to date\"}"
-else
-  echo "{\"text\":\"󰣇\", \"tooltip\":\"${tooltip}\"}"
-fi
+  total=$((official_updates + aur_updates + flatpak_updates))
+
+  tooltip="Official:   $official_updates\nAUR ($aur_helper):  $aur_updates\nFlatpak:    $flatpak_updates"
+
+  if [ "$total" -eq 0 ]; then
+    json='{"text":"󰮠","tooltip":"Packages are up to date"}'
+  else
+    json="{\"text\":\"󰣇\",\"tooltip\":\"${tooltip}\"}"
+  fi
+
+  echo "$json" > "$CACHE"
+  pkill -RTMIN+20 waybar
+
+  rm -f "$LOCKFILE"
+) &
+
+exit 0
+
