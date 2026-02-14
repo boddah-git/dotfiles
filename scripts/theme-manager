@@ -87,15 +87,18 @@ class ThemeGenerator:
         shutil.copy2(theme_path, self.current_theme_file)
         
         # Template mapping: template_file -> output_path
+        # NOTE: kdeglobals IS the color scheme - no separate .colors file needed
         template_map = {
             'rofi.rasi.template': Path.home() / '.config' / 'rofi' / 'theme.rasi',
             'waybar.css.template': Path.home() / '.config' / 'waybar' / 'theme.css',
             'kitty.conf.template': Path.home() / '.config' / 'kitty' / 'colorscheme.conf',
             'mako.conf.template': Path.home() / '.config' / 'mako' / 'config',
-            'dolphin.colors.template': Path.home() / '.local' / 'share' / 'color-schemes' / 'theme.colors',
+            'kdeglobals.template': Path.home() / '.config' / 'kdeglobals',
         }
         
         success_count = 0
+        failed_templates = []
+        
         for template_name, output_path in template_map.items():
             template_path = self.templates_dir / template_name
             
@@ -107,14 +110,21 @@ class ThemeGenerator:
             if self.generate_from_template(template_path, theme_data, output_path):
                 success_count += 1
             else:
+                failed_templates.append(template_name)
                 print(f"Failed to generate {output_path}")
         
         print(f"\n✓ Theme '{theme_name}' applied successfully!")
-        print(f"  Generated {success_count} config files")
+        print(f"  Generated {success_count}/{len(template_map)} config files")
+        
+        if failed_templates:
+            print(f"\n⚠ Failed templates: {', '.join(failed_templates)}")
+        
         print(f"\nReload your applications to see changes:")
         print(f"  - Waybar: killall waybar && waybar &")
         print(f"  - Mako: makoctl reload")
-        print(f"  - Kitty: (will apply on next launch)")
+        print(f"  - Kitty: pkill -SIGUSR1 kitty (or restart)")
+        print(f"  - Dolphin: Restart Dolphin to see changes")
+        print(f"\n💡 Tip: Use the rofi theme switcher for automatic app reloading")
         
         return True
     
@@ -151,6 +161,10 @@ class ThemeGenerator:
         print(f"Initialized theme manager at: {self.config_dir}")
         print(f"  Themes: {self.themes_dir}")
         print(f"  Templates: {self.templates_dir}")
+        print(f"\nNext steps:")
+        print(f"  1. Copy your template files to: {self.templates_dir}")
+        print(f"  2. Create theme YAML files in: {self.themes_dir}")
+        print(f"  3. Run: theme-manager apply <theme-name>")
 
 
 def main():

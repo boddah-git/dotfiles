@@ -51,8 +51,48 @@ apply_theme() {
         notify-send "Theme Applied" "Switched to $theme_name" -i preferences-desktop-theme
         
         # Reload applications
+        reload_apps
     else
         notify-send "Theme Error" "Failed to apply $theme_name" -u critical
+    fi
+}
+
+reload_apps() {
+    # Reload Mako
+    if command -v makoctl > /dev/null; then
+        makoctl reload
+    fi
+    
+    # Reload Kitty (send SIGUSR1 to reload config)
+    if pgrep -x kitty > /dev/null; then
+        pkill -SIGUSR1 kitty
+    fi
+    
+    # Reload KDE/Dolphin configuration
+    if command -v qdbus > /dev/null; then
+        # Force KDE to re-read kdeglobals
+        qdbus org.kde.KGlobalSettings /KGlobalSettings org.kde.KGlobalSettings.notifyChange 2 0 2>/dev/null || true
+        
+        # Also try with dbus-send as fallback
+        if command -v dbus-send > /dev/null; then
+            dbus-send --session --dest=org.kde.KGlobalSettings \
+                /KGlobalSettings org.kde.KGlobalSettings.notifyChange int32:2 int32:0 2>/dev/null || true
+        fi
+        
+        # Wait a moment for settings to propagate
+        sleep 0.3
+        
+        # Restart Dolphin if running
+        if pgrep -x dolphin > /dev/null; then
+            if command -v kquitapp6 > /dev/null; then
+                kquitapp6 dolphin 2>/dev/null || killall dolphin
+            else
+                killall dolphin
+            fi
+            sleep 0.5
+            dolphin &>/dev/null &
+            disown
+        fi
     fi
 }
 

@@ -1,5 +1,7 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
+SETUVAR --export QT_QPA_PLATFORMTHEME:kde
+SETUVAR --export XDG_CURRENT_DESKTOP:KDE
 SETUVAR __fish_initialized:4300
 SETUVAR _fisher_decors_2F_fish_2D_colored_2D_man_files:\x7e/\x2econfig/fish/functions/man\x2efish
 SETUVAR _fisher_jorgebucaran_2F_autopair_2E_fish_files:\x7e/dotfiles/\x2econfig/fish/fisherman/functions/_autopair_backspace\x2efish\x1e\x7e/dotfiles/\x2econfig/fish/fisherman/functions/_autopair_insert_left\x2efish\x1e\x7e/dotfiles/\x2econfig/fish/fisherman/functions/_autopair_insert_right\x2efish\x1e\x7e/dotfiles/\x2econfig/fish/fisherman/functions/_autopair_insert_same\x2efish\x1e\x7e/dotfiles/\x2econfig/fish/fisherman/functions/_autopair_tab\x2efish\x1e\x7e/dotfiles/\x2econfig/fish/fisherman/conf\x2ed/autopair\x2efish

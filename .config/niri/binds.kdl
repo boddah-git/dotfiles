@@ -8,7 +8,7 @@ binds {
     MOD+ALT+L                           hotkey-overlay-title="Lock Screen: swaylock" { spawn-sh "swaylock"; }
     
     // Please choose your own file manager
-    MOD+E                             hotkey-overlay-title="File Manager: kitty yazi" { spawn-sh "kitty yazi"; }
+    MOD+E                             hotkey-overlay-title="File Manager: dolphin" { spawn-sh "dolphin"; }
 
     // ─── Audio Controls ─── 
     // Example volume keys mappings for PipeWire & WirePlumber.
