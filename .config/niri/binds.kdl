@@ -1,6 +1,4 @@
 binds {
-    MOD+SHIFT+SLASH                     { show-hotkey-overlay; }
-
     // ─── Applications ───
     MOD+RETURN                          hotkey-overlay-title="Open Terminal: kitty" { spawn-sh "kitty"; }
     MOD+B                               hotkey-overlay-title="Open Browser: firefox" { spawn-sh "firefox"; }

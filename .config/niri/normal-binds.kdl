@@ -1,6 +1,7 @@
 binds {
 // App Launcher
     MOD+CTRL+RETURN                     hotkey-overlay-title="Open App Launcher: rofi -show drun" { spawn-sh "rofi -show drun"; }
+    MOD+SHIFT+SLASH                     { show-hotkey-overlay; }
     MOD+BACKSPACE                       { spawn-sh "~/dotfiles/.config/waybar/scripts/logout-menu.sh"; }
 
 // ─── Audio Controls ─── 

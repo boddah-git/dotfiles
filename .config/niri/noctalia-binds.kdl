@@ -2,6 +2,8 @@ binds {
 // App Launcher
     MOD+CTRL+RETURN             { spawn-sh "qs -c noctalia-shell ipc call launcher toggle"; }
     MOD+BACKSPACE               { spawn-sh "qs -c noctalia-shell ipc call sessionMenu toggle"; }
+    MOD+SHIFT+SLASH             { spawn-sh "qs -c noctalia-shell ipc call plugin:keybind-cheatsheet toggle"; }
+    MOD+ESCAPE                  { spawn-sh "qs -c noctalia-shell ipc call controlCenter toggle"; }
 
 // Volume
     XF86AudioRaiseVolume        { spawn-sh "qs -c noctalia-shell ipc call volume increase"; }
