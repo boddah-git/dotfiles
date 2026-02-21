@@ -1,6 +1,5 @@
 # Base utilities
 yazi
-waybar
 btop
 brightnessctl
 github-cli
@@ -17,8 +16,6 @@ evince
 slurp
 wiremix
 satty
-mako
-swaybg
 doas
 
 # Fish
@@ -32,3 +29,5 @@ tree
 # KDE
 plasma-workspace
 dolphin
+
+noctalia-shell
