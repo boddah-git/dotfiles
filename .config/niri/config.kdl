@@ -20,6 +20,7 @@ include "input.kdl"
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Key-Bindings
 
 include "binds.kdl"
+include "noctalia-binds.kdl"
 
 // ────────────── Startup Applications ──────────────
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Miscellaneous#spawn-sh-at-startup
@@ -50,7 +51,7 @@ include "animations.kdl"
     }
 
     window-rule {
-        // geometry-corner-radius 10 // Set every window radius to 20
+        geometry-corner-radius 10 // Set every window radius to 20
         clip-to-geometry true
     }
 
@@ -69,3 +70,6 @@ include "animations.kdl"
     hotkey-overlay {
         skip-at-startup
     }
+
+include "./noctalia.kdl"
+
