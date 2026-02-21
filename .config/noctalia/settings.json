@@ -194,7 +194,7 @@
                 {
                     "colorizeDistroLogo": false,
                     "colorizeSystemIcon": "none",
-                    "customIconPath": "",
+                    "customIconPath": "/home/boddah/dotfiles/assets/aleph-white.svg",
                     "enableColorization": true,
                     "icon": "noctalia",
                     "id": "ControlCenter",
@@ -631,7 +631,7 @@
         "wallhavenCategories": "110",
         "wallhavenOrder": "desc",
         "wallhavenPurity": "100",
-        "wallhavenQuery": "",
+        "wallhavenQuery": "nier",
         "wallhavenRatios": "",
         "wallhavenResolutionHeight": "",
         "wallhavenResolutionMode": "atleast",
