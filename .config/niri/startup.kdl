@@ -1,6 +1,6 @@
 spawn-sh-at-startup "/usr/lib/polkit-kde-authentication-agent-1 &" // Polkit
 // spawn-sh-at-startup "swaybg -i ~/dotfiles/themes/wallpapers/egypt.png" // Set wallpaper
-spawn-sh-at-startup "qs -c noctalia-shell --no-duplicate"
+spawn-at-startup "env" "QT_QPA_PLATFORMTHEME=gtk3" "qs" "-c" "noctalia-shell"
 
 prefer-no-csd // Disable program decorations
 screenshot-path null // Disable screenshot saving

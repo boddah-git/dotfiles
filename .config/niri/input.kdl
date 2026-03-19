@@ -1,7 +1,8 @@
 input {
     keyboard {
         xkb {
-            layout "us" 
+            layout "us"
+            variant "altgr-intl"
         }
         numlock // Enable numlock on startup
     }
